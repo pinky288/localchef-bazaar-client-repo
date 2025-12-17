@@ -4,6 +4,7 @@ import { useNavigate, useSearchParams } from "react-router-dom";
 const PaymentSuccess = () => {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
+  
 
   useEffect(() => {
     const orderId = searchParams.get("orderId");
