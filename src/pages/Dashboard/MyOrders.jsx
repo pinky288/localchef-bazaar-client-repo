@@ -86,7 +86,7 @@ const MyOrders = () => {
 
   return (
     <div className="p-4">
-      <h2 className="text-2xl font-bold mb-6 text-center text-[#8D0B41]">My Orders</h2>
+    <h2 className="text-2xl font-bold mb-6 text-center text-[#8D0B41]">My Orders</h2>
       <div className="space-y-4">
         {orders.map((order) => (
           <div
@@ -94,7 +94,7 @@ const MyOrders = () => {
             className="bg-white p-4 sm:p-6 rounded-lg shadow-md border border-gray-200 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3"
           >
             <div className="flex-1">
-              <h3 className="font-bold text-lg mb-2">{order.mealName}</h3>
+            <h3 className="font-bold text-lg mb-2">{order.mealName}</h3>
               <p><strong>Quantity:</strong> {order.quantity}</p>
               <p><strong>Price:</strong> ৳{order.price}</p>
               <p><strong>Status:</strong> {order.orderStatus}</p>
@@ -102,7 +102,7 @@ const MyOrders = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row sm:items-center gap-2 mt-2 sm:mt-0">
-              <button
+      <button
                 onClick={() => handleDelete(order._id)}
                 className="text-red-600 hover:text-red-800 p-2 rounded-full hover:bg-red-100 transition-colors"
                 title="Delete Order"
@@ -114,14 +114,14 @@ const MyOrders = () => {
                 <button
                   onClick={() => handlePayment(order)}
                   className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors"
-                >
+           >
                   {payingOrderId === order._id ? "Processing..." : "Pay Now"}
                 </button>
-              )}
-            </div>
-          </div>
-        ))}
-      </div>
+       )}
+     </div>
+       </div>
+    ))}
+    </div>
     </div>
   );
 };
