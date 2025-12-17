@@ -87,8 +87,7 @@ const DashboardLayout = () => {
         <h2 className="text-2xl font-bold text-[#8D0B41] mb-6 text-center">
           {role.charAt(0).toUpperCase() + role.slice(1)} Dashboard
         </h2>
-
-        <nav className="space-y-3">
+  <nav className="space-y-3">
           {menuItems[role].map((item) => (
             <NavLink
               key={item.path}
@@ -99,20 +98,18 @@ const DashboardLayout = () => {
                     ? "bg-[#8D0B41] text-white"
                     : "text-gray-700 hover:bg-gray-200"
                 }`
-              }
+           }
             >
               {item.name}
             </NavLink>
           ))}
         </nav>
       </aside>
-
-      
       <main className="flex-1 p-4 md:p-6">
         <Outlet />
       </main>
     </div>
-  );
+);
 };
 
 export default DashboardLayout;
