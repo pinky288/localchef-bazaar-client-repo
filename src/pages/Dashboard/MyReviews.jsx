@@ -66,9 +66,9 @@ const MyReviews = () => {
       <h2 className="text-2xl font-bold mb-6 text-center text-[#8D0B41]">My Reviews</h2>
       <div className="space-y-4">
         {reviews.map((review) => {
-          const reviewerName = review.reviewerName || review.name || "Anonymous";
-          const reviewerImage = review.reviewerImage || review.image || "https://i.ibb.co/your-default-avatar.png";
-          const mealName = review.meal || "N/A";
+         const reviewerName = review.reviewerName || review.name || "Anonymous";
+         const reviewerImage = review.reviewerImage || review.image || "https://i.ibb.co/your-default-avatar.png";
+         const mealName = review.meal || "N/A";
           const reviewDate = review.date ? new Date(review.date).toLocaleDateString() : "N/A";
 
           return (
@@ -76,29 +76,29 @@ const MyReviews = () => {
               key={review._id}
               className="bg-white p-4 sm:p-6 rounded-lg shadow flex flex-col sm:flex-row sm:items-start gap-4 relative"
             >
-              <img
+        <img
                 src={reviewerImage}
                 alt={reviewerName}
                 className="w-16 h-16 rounded-full object-cover"
               />
-              <div className="flex-1">
+      <div className="flex-1">
                 <h3 className="font-semibold">{reviewerName}</h3>
                 <p className="text-sm text-gray-500">Meal: {mealName}</p>
                 <p>Rating: {review.rating} ⭐</p>
                 <p>Comment: {review.comment}</p>
                 <p className="text-sm text-gray-500">Date: {reviewDate}</p>
-              </div>
+    </div>
               <button
                 onClick={() => handleDelete(review._id)}
                 className="absolute top-4 right-4 text-red-600 hover:text-red-800"
                 title="Delete Review"
               >
-                <FiTrash2 size={20} />
-              </button>
-            </div>
+         <FiTrash2 size={20} />
+         </button>
+         </div>
           );
-        })}
-      </div>
+      })}
+   </div>
     </div>
   );
 };
