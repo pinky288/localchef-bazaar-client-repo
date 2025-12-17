@@ -24,18 +24,17 @@ const Banner = () => {
 
   return (
     <div className="relative w-full h-[500px] md:h-[600px] lg:h-[700px] overflow-hidden flex bg-white">
-      <AnimatePresence>
-        <motion.div
-          key={current}
+     <AnimatePresence>
+    <motion.div
+ key={current}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 1 }}
-          className="flex w-full h-full"
-        >
+          className="flex w-full h-full" >
          
-          <div className="w-1/2 h-full flex justify-center items-center overflow-hidden bg-white">
-            <motion.img
+   <div className="w-1/2 h-full flex justify-center items-center overflow-hidden bg-white">
+ <motion.img
               src={banners[current].image}
               alt={banners[current].heading}
               className="h-full w-full object-cover"
@@ -43,9 +42,7 @@ const Banner = () => {
               animate={{ scale: 1.05 }}
               transition={{ duration: 5 }}
             />
-          </div>
-
-          
+    </div> 
           <div className="w-1/2 h-full flex flex-col justify-center px-8 md:px-16 text-[#8D0B41] bg-white">
             <motion.h1
               key={banners[current].heading}
@@ -71,12 +68,11 @@ const Banner = () => {
               className="bg-[#8D0B41] text-white px-4 md:px-6 py-2 font-semibold rounded shadow transition w-max"
             >
               {banners[current].cta}
-            </motion.button>
-          </div>
-        </motion.div>
+      </motion.button>
+    </div>
+       </motion.div>
       </AnimatePresence>
 
-     
       <div className="absolute bottom-4 md:bottom-5 left-1/2 transform -translate-x-1/2 flex gap-2 md:gap-3 z-10">
         {banners.map((_, idx) => (
           <motion.button
@@ -85,10 +81,10 @@ const Banner = () => {
             className={`w-2 h-2 md:w-3 md:h-3 rounded-full ${current === idx ? "bg-[#8D0B41]" : "bg-white/50"}`}
             whileHover={{ scale: 1.3 }}
           />
-        ))}
-      </div>
-    </div>
-  );
+      ))}
+   </div>
+</div>
+   );
 };
 
 export default Banner;
