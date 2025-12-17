@@ -73,18 +73,18 @@ const Meals = () => {
             />
             <h2 className="text-xl font-semibold text-[#8D0B41]">{meal.name}</h2>
             <p className="text-gray-700 mt-1">
-              Chef:{" "}
+            Chef:{" "}
               <span className="font-semibold text-[#8D0B41]">
-                {meal.chef}
+               {meal.chef}
               </span>
-            </p>
+          </p>
             <p className="text-gray-700">{meal.category}</p>
             <p className="text-lg font-bold text-[#8D0B41]">৳ {meal.price}</p>
             <p>
               Rating:{" "}
-              <span className="font-semibold text-[#8D0B41]">
+            <span className="font-semibold text-[#8D0B41]">
                 {meal.rating} ⭐
-              </span>
+           </span>
             </p>
             <p>
               Delivery Area:{" "}
@@ -92,8 +92,7 @@ const Meals = () => {
                 {meal.deliveryArea}
               </span>
             </p>
-
-            <button
+ <button
               onClick={() => handleSeeDetails(meal._id)}
               className="mt-3 w-full bg-[#8D0B41] text-white py-2 rounded font-semibold hover:bg-[#6F0832] transition"
             >
@@ -103,8 +102,7 @@ const Meals = () => {
         ))}
       </div>
 
-     
-      <div className="flex justify-center mt-10 gap-2">
+   <div className="flex justify-center mt-10 gap-2">
         {[...Array(totalPages).keys()].map((number) => (
           <button
             key={number}
@@ -116,11 +114,11 @@ const Meals = () => {
             }`}
           >
             {number + 1}
-          </button>
-        ))}
+     </button>
+   ))}
       </div>
     </div>
-  );
+ );
 };
 
 export default Meals;
