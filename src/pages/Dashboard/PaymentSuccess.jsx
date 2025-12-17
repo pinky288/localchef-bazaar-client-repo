@@ -20,13 +20,11 @@ const PaymentSuccess = () => {
           body: JSON.stringify({ paymentStatus: "Paid" }),
         });
 
-        await fetch("http://localhost:3000/payments", {
+    await fetch("http://localhost:3000/payments", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ orderId, amount, transactionId }),
-        });
-
-        
+          }); 
         setTimeout(() => navigate("/dashboard/orders"), 2000);
 
       } catch (err) {
@@ -34,18 +32,16 @@ const PaymentSuccess = () => {
         alert("Payment update failed. Please contact support.");
       }
     };
-
     updatePayment();
   }, [navigate, searchParams]);
-
   return (
     <div className="flex items-center justify-center h-screen">
       <div className="text-center">
-        <h2 className="text-2xl font-bold text-green-600">✅ Payment Successful</h2>
-        <p className="mt-2">
+      <h2 className="text-2xl font-bold text-green-600">✅ Payment Successful</h2>
+    <p className="mt-2">
           Processing Payment...<br />
           Please wait, we are updating your order status.
-        </p>
+      </p>
       </div>
     </div>
   );
