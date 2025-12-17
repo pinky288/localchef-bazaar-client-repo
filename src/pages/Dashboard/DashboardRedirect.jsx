@@ -13,21 +13,19 @@ const DashboardRedirect = () => {
       const token = localStorage.getItem("accessToken");
       if (token) {
         try {
-          const payload = JSON.parse(atob(token.split(".")[1]));
-          setRole(payload.role);
+       const payload = JSON.parse(atob(token.split(".")[1]));
+     setRole(payload.role);
         } catch {
           setRole("user"); 
         }
       } else {
-        
-        fetch(`http://localhost:3000/users/role/${user.email}`)
+            fetch(`http://localhost:3000/users/role/${user.email}`)
           .then(res => res.json())
           .then(data => setRole(data.role))
           .catch(err => console.error(err));
       }
     }
   }, [user]);
-
   if (loading || !user || !role) return <p className="text-center mt-10">Loading...</p>;
 
   useEffect(() => {
@@ -36,6 +34,7 @@ const DashboardRedirect = () => {
     else if (role === "admin") navigate("/dashboard/admin", { replace: true });
   }, [role, navigate]);
 
+  
   return null;
 };
 
